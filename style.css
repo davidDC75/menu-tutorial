@@ -17,11 +17,11 @@ nav {
 
 nav ul {
     list-style-type: none;
+    display: flex;
 }
 
 nav ul li {
-    float: left;
-    width: 25%;
+    flex: 1 1 auto;
     text-align: center;
     position: relative;
 }
@@ -55,12 +55,12 @@ nav a:hover {
 }
 
 nav > ul li:hover .sous {
-    display: block;
+    display: flex;
+    flex-flow: column wrap;
 }
 
 .sous li {
-    float: none;
-    width: 100%;
+    flex: 1 1 auto;
     text-align: left;
 }
 
