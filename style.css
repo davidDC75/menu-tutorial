@@ -143,6 +143,9 @@ nav a {
     }
 
     nav > div > ul li:hover .sous {
+        /* on les mets en positions absolute
+            avec une taille à 100% pour qu'ils prennent toute la largeur
+            et ne pousse pas le contenu vers le bas */
         position: absolute;
         width: 100%;
         display: flex;
