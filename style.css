@@ -78,3 +78,19 @@ nav > ul li:hover .sous {
     content: " ▼";
     font-size: 12px;
 }
+
+.red {
+    background-color: red;
+}
+
+.brown {
+    background-color: brown;
+}
+
+.green {
+    background-color: green;
+}
+
+.aqua {
+    background-color: aqua;
+}
