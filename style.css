@@ -5,19 +5,50 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/* Permet au menu de ne pas décalé la mise en page. Lorsqu'il s'affiche, il pousse les éléments vers le bas.
+    il s'affiche au dessus du contenu */
+.conteneur-nav {
+    position: absolute;
+    width: 100%;
+}
+
 /* La barre de navigation */
 nav {
     width: 100%;
     margin: 0 auto;
     background-color: white;
-    /* Creuser sur le sticky */
+    /* Le sticky ne sort pas du flux
+        donc le haut de la page n'est pas rogné.
+        Contrairement à fixed, d'où préféré
+        l'utilisation de sticky */
     position: sticky;
     top: 0px;
 }
 
+nav label {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 0px;
+    text-align: center;
+    background-color: gold;
+}
+
 nav ul {
     list-style-type: none;
+    display: none;
+    background-color: #555;
+}
+
+/* On cache la checkbox. Pas besoin car il y a le label qui nous sert de bouton */
+nav input[type=checkbox] {
+    display: none;
+}
+
+/* Permet d'ouvrir et de fermer le menu en cliquant sur le label */
+/* Cela fonctionne car la checkbox est juste avant le ul */
+nav input[type=checkbox]:checked + ul {
     display: flex;
+    flex-flow: column wrap;
 }
 
 nav ul li {
@@ -26,37 +57,20 @@ nav ul li {
     position: relative;
 }
 
-nav ul::after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
 nav a {
     display: block;
     text-decoration: none;
     color: black;
+    /* comme ça la nav garde tout le temps la même hauteur
+        On affiche une border transparent */
     border-bottom: 2px solid transparant;
     padding: 10px 0px;
 }
 
-nav a:hover {
-    color: orange;
-    border-bottom: 2px solid gold;
-}
-
 .sous {
-    display: none;
-    box-shadow: 0px 1px 2px #CCC;
-    background-color: white;
-    position: absolute;
-    width: 100%;
-    z-index: 1000;
-}
-
-nav > ul li:hover .sous {
     display: flex;
     flex-flow: column wrap;
+    z-index: 1000;
 }
 
 .sous li {
@@ -67,16 +81,7 @@ nav > ul li:hover .sous {
 .sous a {
     padding: 10px;
     border-bottom: none;
-}
-
-.sous a:hover {
-    border-bottom: none;
-    background-color: rgba(200, 200, 200, 0.1);
-}
-
-.deroulant > a::after {
-    content: " ▼";
-    font-size: 12px;
+    background-color: rgba(200, 200, 200, 0.8);
 }
 
 .red {
