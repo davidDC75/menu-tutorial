@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* Reset CSS */
 * {
     margin: 0;
@@ -98,4 +100,67 @@ nav a {
 
 .aqua {
     background-color: aqua;
+}
+
+@media screen and (min-width: 980px) {
+    .conteneur-nav {
+        position: static;
+    }
+
+    nav label, nav input {
+        display: none;
+    }
+
+    nav input[type=checkbox]:checked + ul, nav ul {
+        display: flex;
+        flex-flow: row wrap;
+        background-color: white;
+    }
+
+    nav ul li {
+        position: relative
+    }
+
+    nav > div > ul > li > a {
+        color: black;
+    }
+
+    nav a {
+        border-bottom: 2px solid transparent;
+    }
+
+    nav a:hover {
+        color: orange;
+        border-bottom: 2px solid gold;
+    }
+
+    .sous {
+        display: none;
+        box-shadow: 0px 1px 2px #CCC;
+        background-color: white;
+        position: absolute
+        width: 100%;
+    }
+
+    nav > div > ul li:hover .sous {
+        position: absolute;
+        width: 100%;
+        display: flex;
+        flex-flow: column wrap;
+    }
+
+    .sous a {
+        border-bottom: none;
+        background-color: white;
+    }
+
+    .sous a:hover {
+        border-bottom: none;
+        background-color: rgba(200, 200, 200, 0.1);
+    }
+
+    .deroulant > a::after {
+        content: "\21d3";
+        font-size: 12px;
+    }
 }
